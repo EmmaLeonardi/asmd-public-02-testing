@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MyDeterministicDeviceTest {
+public class MyDeterministicPolicyTest {
 
     public FailingPolicy policyFalse;
     public FailingPolicy policyTrue;
