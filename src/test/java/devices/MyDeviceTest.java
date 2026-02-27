@@ -2,7 +2,6 @@ package devices;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Spy;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -12,15 +11,11 @@ public class MyDeviceTest {
 
     private Device device;
     private FailingPolicy failingPolicy;
-    private Device spyDevice;
-    private FailingPolicy spyPolicy;
 
     @BeforeEach
     void init() {
         this.failingPolicy=mock(FailingPolicy.class);
         this.device=new StandardDevice(failingPolicy);
-        this.spyPolicy=spy(FailingPolicy.class);
-        this.spyDevice=new StandardDevice(spyPolicy);
     }
 
     @Test
@@ -58,8 +53,8 @@ public class MyDeviceTest {
 
     @Test
     void testDeviceResets(){
-        verifyNoInteractions(this.spyPolicy);
-        spyDevice.reset();
-        verify(this.spyPolicy).reset();
+        verifyNoInteractions(this.failingPolicy);
+        device.reset();
+        verify(this.failingPolicy).reset();
     }
 }
