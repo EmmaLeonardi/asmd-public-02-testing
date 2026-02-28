@@ -23,6 +23,6 @@ public class DeterministicFailing implements FailingPolicy {
 
     @Override
     public String policyName() {
-        return "random";
+        return "deterministic";
     }
 }
